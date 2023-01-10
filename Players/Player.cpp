@@ -7,7 +7,10 @@ Player::Player(std::string name, std::string playerClass) {
     m_name = name;
     m_class = playerClass;
     m_level = 1;
-    m_coins = 0;
+    m_coins = 10;
+    m_force = 5;
+    m_maxHP = 100;
+    m_hp = 100;
     m_place = notPlaced;
 }
 
