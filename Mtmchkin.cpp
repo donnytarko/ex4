@@ -71,11 +71,11 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
         std::cin >> name;
         std::cin >> playerClass;
         if (playerClass == "Healer") {
-            m_players.push_back(Healer(name, playerClass));
+            m_players.push_back(Healer(name));
         } else if (playerClass == "Ninja") {
-            m_players.push_back(Ninja(name, playerClass));
+            m_players.push_back(Ninja(name));
         } else if (playerClass == "Warrior") {
-            m_players.push_back(Warrior(name, playerClass));
+            m_players.push_back(Warrior(name));
         } else {
             std::cerr << "invalid player class" << std::endl;
         }

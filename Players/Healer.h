@@ -3,7 +3,7 @@
 
 class Healer : public Player {
     public:
-    Healer(std::string name, std::string playerClass) : Player(name, playerClass) {}
+    Healer(std::string name) : Player(name, "Healer") {}
     void heal(int additionalHP) override {
         if ((m_hp + (2 * additionalHP)) > m_maxHP) {
         m_hp = m_maxHP;
