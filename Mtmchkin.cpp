@@ -15,9 +15,7 @@
 #include <fstream>
 #include <string>
 
-
 const int maxWordLength = 16;
-
 
 Mtmchkin::Mtmchkin(const std::string &fileName) {
     std::ifstream file(fileName);

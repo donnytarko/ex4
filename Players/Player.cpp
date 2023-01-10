@@ -11,6 +11,12 @@ Player::Player(std::string name, std::string playerClass) {
     m_place = notPlaced;
 }
 
+std::ostream& operator<<(std::ostream& os, const Player& player) {
+    printPlayerDetails(os, player.getName(), player.getJob(), player.getLevel(), 
+                        player.getForce(), player.getHealth(), player.getCoins());
+    return os;
+}
+
 void Player::printInfo() const {
 }
 

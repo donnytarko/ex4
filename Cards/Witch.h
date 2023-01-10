@@ -7,7 +7,7 @@ const int witchDamage = 10;
 
 class Witch : public Card {
     public:
-    Witch() : Card() {}
+    Witch() : Card("Witch") {}
     void applyEncounter (Player& player) const override {
         if (player.getAttackStrength() >= witchStrength) {
             player.levelUp();

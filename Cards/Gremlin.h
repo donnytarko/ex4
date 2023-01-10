@@ -7,7 +7,7 @@ const int gremlinDamage = 10;
 
 class Gremlin : public Card {
     public:
-    Gremlin () : Card() {
+    Gremlin () : Card("Gremlin") {
 
     }
     void applyEncounter (Player& player) const override {

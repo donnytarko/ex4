@@ -3,7 +3,7 @@
 
 class Mana : public Card {
     public:
-    Mana() : Card() {}
+    Mana() : Card("Mana") {}
     void applyEncounter (Player& player) const override {
         if (player.getJob() == "Healer") {
             player.heal(20);

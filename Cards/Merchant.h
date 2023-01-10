@@ -3,7 +3,7 @@
 
 class Merchant : public Card {
     public:
-    Merchant() : Card() {}
+    Merchant() : Card("Merchant") {}
     void applyEncounter (Player& player) const override {
         printMerchantInitialMessageForInteractiveEncounter(std::cout, player.getName(), player.getCoins());
         int response;

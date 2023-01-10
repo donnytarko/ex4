@@ -5,7 +5,7 @@ const int wellDamage = 10;
 
 class Well : public Card {
     public:
-    Well() : Card() {}
+    Well() : Card("Well") {}
     void applyEncounter (Player& player) const override {
         if (player.getJob() != "Ninja") {
             player.damage(wellDamage);
