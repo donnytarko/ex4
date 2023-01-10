@@ -27,25 +27,25 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
     int lineNumber = 1;
     char line[maxWordLength];
     while (file.getline(line, maxWordLength)) {
-        if (line == "Gremlin") {
+        if (strcmp(line, "Gremlin") == 0) {
             m_cards.push(Gremlin());
         }
-        if (line == "Dragon") {
+        if (strcmp(line, "Dragon") == 0) {
             m_cards.push(Dragon());
         }
-        if (line == "Witch") {
+        if (strcmp(line, "Witch") == 0) {
             m_cards.push(Witch());
         }
-        if (line == "Treasure") {
+        if (strcmp(line, "Treasure") == 0) {
             m_cards.push(Treasure());
         }
-        if (line == "Well") {
+        if (strcmp(line, "Well") == 0) {
             m_cards.push(Well());
         }
-        if (line == "Barfight") {
+        if (strcmp(line, "Barfight") == 0) {
             m_cards.push(Barfight());
         }
-        if (line == "Mana") {
+        if (strcmp(line, "Mana") == 0) {
             m_cards.push(Mana());
         }
         else {
