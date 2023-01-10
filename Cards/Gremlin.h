@@ -1,9 +1,9 @@
 #ifndef GREMLIN_H
 #define GREMLIN_H
 
-const int strength = 7;
-const int loot = 3;
-const int damage = 10;
+const int gremlinStrength = 7;
+const int gremlinLoot = 3;
+const int gremlinDamage = 10;
 
 class Gremlin : public Card {
     public:
@@ -11,13 +11,13 @@ class Gremlin : public Card {
 
     }
     void applyEncounter (Player& player) const override {
-        if (player.getAttackStrength() >= strength) {
+        if (player.getAttackStrength() >= gremlinStrength) {
             player.levelUp();
-            player.addCoins(loot);
+            player.addCoins(gremlinLoot);
             printWinBattle(player.getName(), "Gremlin");
         }
         else {
-            player.damage(damage);
+            player.damage(gremlinDamage);
             printLossBattle(player.getName(), "Gremlin");
         }
     }

@@ -1,21 +1,21 @@
 #ifndef WITCH_H
 #define WITCH_H
 
-const int strength = 12;
-const int loot = 3;
-const int damage = 10;
+const int witchStrength = 12;
+const int witchLoot = 3;
+const int witchDamage = 10;
 
 class Witch : public Card {
     public:
     Witch() : Card() {}
     void applyEncounter (Player& player) const override {
-        if (player.getAttackStrength() >= strength) {
+        if (player.getAttackStrength() >= witchStrength) {
             player.levelUp();
-            player.addCoins(loot);
+            player.addCoins(witchLoot);
             printWinBattle(player.getName(), "Witch");
         }
         else {
-            player.damage(damage);
+            player.damage(witchDamage);
             player.decreaseStrength();
             printLossBattle(player.getName(), "Witch");
         }
