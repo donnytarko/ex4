@@ -4,10 +4,9 @@
 const int witchStrength = 12;
 const int witchLoot = 3;
 const int witchDamage = 10;
-std::string witchName = "Witch";
 class Witch : public Card {
     public:
-    Witch() : Card(witchName) {}
+    Witch() : Card("Witch") {}
     void applyEncounter (Player& player) override {
         if (player.getAttackStrength() >= witchStrength) {
             player.levelUp();
