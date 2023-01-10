@@ -1,7 +1,7 @@
 #ifndef MTMCHKIN_H_
 #define MTMCHKIN_H_
 #include "Players/Player.h"
-#include "Card.h"
+#include "Cards/Card.h"
 #include <queue>
 #include <vector>
 #include <string>

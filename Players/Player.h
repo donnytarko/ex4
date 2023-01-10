@@ -26,13 +26,15 @@ class Player {
     std::string getJob() const;
     int getForce() const;
     void buff(int forceIncrease);
-    void heal(int additionalHP);
+    virtual void heal(int additionalHP);
     void damage(int damageTaken);
     bool isKnockedOut() const;
-    void addCoins(int additionalCoins);
+    virtual void addCoins(int additionalCoins);
     bool pay(int paymentAmount);
-    int getAttackStrength() const;
-
+    virtual int getAttackStrength() const;
+    void decreaseStrength();
+    void kill();
+    void place(int place);
 };
 
 #endif //EX2_Player_H
