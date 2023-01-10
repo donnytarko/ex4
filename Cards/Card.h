@@ -7,17 +7,13 @@
 #include <string>
 #include "../Players/Player.h"
 #include "../utilities.h"
-
-/*
- *  CardType:
- *  Each card has an type:
- *  BATTLE - Battle against a monster.
- *  BUFF - Increase your player's force by 'm_force' points of CardStats.
- *  HEAL - Increase your player's HP by 'm_heal' points  of CardStats (no more than maxHP points).
- *  TREASURE - Get 'm_profit' coins of CardStats.
-*/
+#include <iostream>
+#include <string>
 
 class Card {
+
+private:
+std::string m_type;
 
 public:
     /*
@@ -27,7 +23,7 @@ public:
      * @return
      *      A new instance of Card.
     */
-    Card();
+    Card(const std::string& type);
 
 
     /*
@@ -39,13 +35,10 @@ public:
     */
     virtual void applyEncounter(Player& player) const;
 
-
-    /*
-     * Here we are explicitly telling the compiler to use the default methods
-    */
     Card(const Card&) = default;
     ~Card() = default;
     Card& operator=(const Card& other) = default;
+    friend std::ostream& operator<<(std::ostream& os, const Card& card);
 };
 
 
