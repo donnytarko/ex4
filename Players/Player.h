@@ -38,4 +38,6 @@ class Player {
     void place(int place);
 };
 
+std::ostream& operator<<(std::ostream& os, const Player& player);
+
 #endif //EX2_Player_H
