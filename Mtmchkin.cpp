@@ -11,18 +11,20 @@
 #include "Cards/Barfight.h"
 #include "Cards/Mana.h"
 #include "utilities.h"
+#include "Exception.h"
 #include <fstream>
-using std::ifstream;
+#include <string>
+
 
 const int maxWordLength = 16;
 
 
 Mtmchkin::Mtmchkin(const std::string &fileName) {
-    ifstream file(fileName);
+    std::ifstream file(fileName);
     if (!file) {
-		std::cerr << "cannot open file " << fileName << std::endl;
-        //leave main
+		throw DeckFileNotFound();
     }
+    int lineNumber = 1;
     char line[maxWordLength];
     while (file.getline(line, maxWordLength)) {
         if (line == "Gremlin") {
@@ -46,6 +48,13 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
         if (line == "Mana") {
             m_cards.push(Mana());
         }
+        else {
+            throw DeckFileFormatError(lineNumber);
+        }
+        lineNumber++;
+    }
+    if (lineNumber < 6) {
+        throw DeckFileInvalidSize();
     }
     
     printStartGameMessage();

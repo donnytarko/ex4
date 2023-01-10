@@ -1,8 +1,17 @@
 #ifndef MTMCHKIN_H_
 #define MTMCHKIN_H_
+#include "Players/Player.h"
+#include "Card.h"
+#include <queue>
+#include <vector>
+#include <string>
+
 
 class Mtmchkin{
-
+private:
+    int m_numOfPlayers, m_roundCount, m_winnersCount, m_losersCount;
+    std::queue<Card> m_cards;
+    std::vector<Player> m_players;
 public:
     
     /*
@@ -13,7 +22,9 @@ public:
     *      A new instance of Mtmchkin.
     */
     explicit Mtmchkin(const std::string &fileName);
-    
+
+    Mtmchkin& operator=(const Mtmchkin& other) = delete;
+    Mtmchkin(const Mtmchkin& other) = delete;
     /*
     * Play the next Round of the game - according to the instruction in the exercise document.
     *
