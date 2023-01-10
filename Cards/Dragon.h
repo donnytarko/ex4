@@ -7,7 +7,7 @@ const int dragonLoot = 1000;
 class Dragon : public Card {
     public:
     Dragon () : Card("Dragon") {}
-    void applyEncounter (Player& player) const override {
+    void applyEncounter (Player& player) override {
         if (player.getAttackStrength() >= dragonStrength) {
             player.levelUp();
             player.addCoins(dragonLoot);

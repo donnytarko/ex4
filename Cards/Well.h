@@ -6,7 +6,7 @@ const int wellDamage = 10;
 class Well : public Card {
     public:
     Well() : Card("Well") {}
-    void applyEncounter (Player& player) const override {
+    void applyEncounter (Player& player) override {
         if (player.getJob() != "Ninja") {
             player.damage(wellDamage);
             printWellMessage(false);

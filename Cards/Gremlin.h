@@ -10,7 +10,7 @@ class Gremlin : public Card {
     Gremlin () : Card("Gremlin") {
 
     }
-    void applyEncounter (Player& player) const override {
+    void applyEncounter (Player& player) override {
         if (player.getAttackStrength() >= gremlinStrength) {
             player.levelUp();
             player.addCoins(gremlinLoot);

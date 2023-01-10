@@ -6,7 +6,7 @@ const int barfightDamage = 10;
 class Barfight : public Card {
     public:
     Barfight () : Card("Barfight") {}
-    void applyEncounter (Player& player) const override {
+    void applyEncounter (Player& player) override {
         if (player.getJob() != "Warrior") {
             player.damage(barfightDamage);
             printBarfightMessage(false);

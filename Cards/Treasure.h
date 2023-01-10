@@ -6,7 +6,7 @@ const int coinsAmount = 10;
 class Treasure : public Card {
     public:
     Treasure() : Card("Treasure") {}
-    void applyEncounter (Player& player) const override {
+    void applyEncounter (Player& player) override {
         player.addCoins(coinsAmount);
     }
 };

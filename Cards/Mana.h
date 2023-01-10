@@ -4,7 +4,7 @@
 class Mana : public Card {
     public:
     Mana() : Card("Mana") {}
-    void applyEncounter (Player& player) const override {
+    void applyEncounter (Player& player) override {
         if (player.getJob() == "Healer") {
             player.heal(20);
             printManaMessage(true);
