@@ -26,4 +26,4 @@ std::ostream& operator<<(std::ostream& os, const Card& card) {
 }
 
 
-void Card::applyEncounter(Player& player) {};
+void Card::applyEncounter(Player& player) {}
