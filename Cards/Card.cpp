@@ -24,3 +24,6 @@ std::ostream& operator<<(std::ostream& os, const Card& card) {
     printEndOfCardDetails(os);
     return os;
 }
+
+
+void Card::applyEncounter(Player& player) {};

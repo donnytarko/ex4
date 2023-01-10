@@ -91,7 +91,6 @@ void Mtmchkin::playRound() {
         if (player.getPlace() == notPlaced) {
             printTurnStartMessage(player.getName());
             Card currentCard = m_cards.front();
-            std::cout << "encounter with " << player.getJob() <<std::endl;
             currentCard.applyEncounter(player);
             m_cards.pop();
             m_cards.push(currentCard);
