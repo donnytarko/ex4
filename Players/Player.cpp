@@ -1,11 +1,13 @@
 #include <iostream>
 #include "Player.h"
-#include "utilities.h"
+#include "../utilities.h"
 
-Player::Player(std::string name, PlayerClass playerClass) {
+Player::Player(std::string name, std::string playerClass) {
     m_name = name;
+    m_class = playerClass;
     m_level = 1;
     m_coins = 0;
+    m_place = notPlaced;
 }
 
 void Player::printInfo() const {
@@ -28,6 +30,22 @@ int Player::getLevel() const {
 
 int Player::getHealth() const {
     return m_hp;
+}
+
+int Player::getForce() const {
+    return m_force;
+}
+
+std::string Player::getJob() const {
+    return m_class;
+}
+
+int Player::getCoins() const {
+    return m_coins;
+}
+
+int Player::getPlace() const {
+    return m_place;
 }
 
 void Player::buff(int forceIncrease) {
@@ -71,4 +89,16 @@ bool Player::pay(int paymentAmount) {
 
 int Player::getAttackStrength() const {
     return m_level + m_force;
+}
+
+void Player::decreaseStrength() {
+    m_force--;
+}
+
+void Player::kill() {
+    m_hp = 0;
+}
+
+void Player::place(int place) {
+    m_place = place;
 }
