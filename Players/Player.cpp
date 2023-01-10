@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Player.h"
 #include "../utilities.h"
+#include <string>
 
 Player::Player(std::string name, std::string playerClass) {
     m_name = name;

@@ -1,5 +1,6 @@
 #ifndef Player_H
 #define Player_H
+#include <string>
 
 const int notPlaced = -1;
 
