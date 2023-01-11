@@ -24,13 +24,13 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
 		throw DeckFileNotFound();
     }
     int lineNumber = 1;
-    char line[maxWordLength];
+    std::string line;
     while (file.getline(line, maxWordLength)) {
         std::cerr << "line is " << line << std::endl;
         if (strcmp(line, "Gremlin") == 0) {
             m_cards.push(Gremlin());
         }
-        if (strcmp(line, "Dragon\n") == 0) {
+        if (strcmp(line, "Dragon") == 0) {
             m_cards.push(Dragon());
         }
         if (strcmp(line, "Witch") == 0) {
