@@ -53,6 +53,7 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
             throw DeckFileFormatError(lineNumber);
         }
         lineNumber++;
+        std::cerr << "line number is " << lineNumber << std::endl;
     }
     if (lineNumber < 6) {
         throw DeckFileInvalidSize();
