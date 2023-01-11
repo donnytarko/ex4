@@ -47,7 +47,7 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
             m_cards.push(Mana());
         }
         else {
-            throw DeckFileFormatError(lineNumber);
+            //throw DeckFileFormatError(lineNumber);
         }
         lineNumber++;
     }
