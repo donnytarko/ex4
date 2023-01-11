@@ -26,7 +26,7 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
     int lineNumber = 1;
     char line[maxWordLength];
     while (file.getline(line, maxWordLength)) {
-        std::cout << "line is " << line << std::endl;
+        std::cerr << "line is " << line << std::endl;
         if (strcmp(line, "Gremlin") == 0) {
             m_cards.push(Gremlin());
         }
@@ -49,7 +49,7 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
             m_cards.push(Mana());
         }
         else {
-            std::cout << "line is " << line << std::endl;
+            std::cerr << "line is " << line << std::endl;
             throw DeckFileFormatError(lineNumber);
         }
         lineNumber++;
