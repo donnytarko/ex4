@@ -86,8 +86,11 @@ bool GeneralGameSimulationTest(const string &tempDeckFilename, string input, str
     istringstream in(input);
     std::streambuf *cinbuf = std::cin.rdbuf(); //save old buf
     std::cin.rdbuf(in.rdbuf());
+            std::cout << "and now here" << std::endl;
 
     std::ofstream outfile(tempDeckFilename+"out.txt");
+                std::cout << "and now all the way here" << std::endl;
+
     std::streambuf *coutbuf = std::cout.rdbuf(); //save old buf
     std::cout.rdbuf(outfile.rdbuf());
             std::cout << "making game" << std::endl;
