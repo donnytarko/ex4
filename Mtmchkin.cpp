@@ -30,22 +30,22 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
         if (line.compare("Gremlin") == 0) {
             m_cards.push(Gremlin());
         }
-        if (strcmp(line, "Dragon") == 0) {
+        if (line.compare("Dragon") == 0) {
             m_cards.push(Dragon());
         }
-        if (strcmp(line, "Witch") == 0) {
+        if (line.compare("Witch") == 0) {
             m_cards.push(Witch());
         }
-        if (strcmp(line, "Treasure") == 0) {
+        if (line.compare("Treasure") == 0) {
             m_cards.push(Treasure());
         }
-        if (strcmp(line, "Well") == 0) {
+        if (line.compare("Well") == 0) {
             m_cards.push(Well());
         }
-        if (strcmp(line, "Barfight") == 0) {
+        if (line.compare("Barfight") == 0) {
             m_cards.push(Barfight());
         }
-        if (strcmp(line, "Mana") == 0) {
+        if (line.compare("Mana") == 0) {
             m_cards.push(Mana());
         }
         else {
