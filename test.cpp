@@ -93,8 +93,9 @@ bool GeneralGameSimulationTest(const string &tempDeckFilename, string input, str
         game.playRound();
         game.printLeaderBoard();
     }
-
+    std::cout << "comparing files" << std::endl;
     bool res = compareFiles(tempDeckFilename+"out.txt", expectedOutputFileName);
+        std::cout << "done comparing files" << std::endl;
 	outfile.close();
     std::cin.rdbuf(cinbuf);
     std::cout.rdbuf(coutbuf);
