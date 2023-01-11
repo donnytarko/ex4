@@ -47,6 +47,7 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
             m_cards.push(Mana());
         }
         else {
+            std::cout << "line is " << line << std::endl;
             //throw DeckFileFormatError(lineNumber);
         }
         lineNumber++;
