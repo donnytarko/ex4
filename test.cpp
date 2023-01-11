@@ -186,6 +186,7 @@ bool gameRunTest()
 
 bool dragonDenTest()
 {
+    std::cout << "in da dragooon test" << std::endl;
     const string tmp_file("dragonDen_test");
     string input("2\nJimmy Healer\nPikachu Warrior");
     string deck("Dragon\nDragon\nDragon\nDragon\nDragon");
