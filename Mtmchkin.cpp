@@ -18,7 +18,7 @@
 const int maxWordLength = 16;
 
 Mtmchkin::Mtmchkin(const std::string &fileName) {
-    std::cout << "we here now" << std::endl;
+    std::cerr << "we here now" << std::endl;
     std::ifstream file(fileName);
     if (!file) {
 		throw DeckFileNotFound();
@@ -50,7 +50,7 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
         }
         else {
             std::cout << "line is " << line << std::endl;
-            //throw DeckFileFormatError(lineNumber);
+            throw DeckFileFormatError(lineNumber);
         }
         lineNumber++;
     }
