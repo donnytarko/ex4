@@ -82,6 +82,7 @@ bool GeneralGameSimulationTest(const string &tempDeckFilename, string input, str
     //   init cin from file
         std::cout << "in here" << std::endl;
     createTextFile(tempDeckFilename+".txt",deck);
+            std::cout << "now here" << std::endl;
     istringstream in(input);
     std::streambuf *cinbuf = std::cin.rdbuf(); //save old buf
     std::cin.rdbuf(in.rdbuf());
