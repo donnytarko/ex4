@@ -80,6 +80,7 @@ bool compareFiles(const string &filename1, const string &filename2)
 bool GeneralGameSimulationTest(const string &tempDeckFilename, string input, string deck, string expectedOutputFileName)
 {
     //   init cin from file
+        std::cout << "in here" << std::endl;
     createTextFile(tempDeckFilename+".txt",deck);
     istringstream in(input);
     std::streambuf *cinbuf = std::cin.rdbuf(); //save old buf
@@ -88,6 +89,8 @@ bool GeneralGameSimulationTest(const string &tempDeckFilename, string input, str
     std::ofstream outfile(tempDeckFilename+"out.txt");
     std::streambuf *coutbuf = std::cout.rdbuf(); //save old buf
     std::cout.rdbuf(outfile.rdbuf());
+            std::cout << "making game" << std::endl;
+
     Mtmchkin game(tempDeckFilename+".txt");
     while(!game.isGameOver() && game.getNumberOfRounds() < 100){
         game.playRound();
