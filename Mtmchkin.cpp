@@ -56,7 +56,7 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
         std::cerr << "line number is " << lineNumber << std::endl;
     }
     if (lineNumber < 6) {
-        //throw DeckFileInvalidSize();
+        throw DeckFileInvalidSize();
     }
     
     printStartGameMessage();
