@@ -92,6 +92,8 @@ bool GeneralGameSimulationTest(const string &tempDeckFilename, string input, str
                 std::cout << "and now all the way here" << std::endl;
 
     std::streambuf *coutbuf = std::cout.rdbuf(); //save old buf
+                    std::cout << "kdkdkdk" << std::endl;
+
     std::cout.rdbuf(outfile.rdbuf());
             std::cout << "making game" << std::endl;
 
