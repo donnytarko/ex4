@@ -24,7 +24,7 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
 		throw DeckFileNotFound();
     }
     int lineNumber = 1;
-    char line[maxWordLength];
+    char line[];
     while (file.getline(line, maxWordLength)) {
         std::cerr << "line is " << line << std::endl;
         if (strcmp(line, "Gremlin") == 0) {
