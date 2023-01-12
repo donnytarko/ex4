@@ -31,9 +31,9 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
             m_cards.push(Gremlin());
         }
         else if (line.compare("Dragon") == 0) {
-            std::cout << "making dragon" << std::endl;
+            std::cerr << "making dragon" << std::endl;
             m_cards.push(Dragon());
-            std::cout << "made dragon" << std::endl;
+            std::cerr << "making dragon" << std::endl;
         }
         else if (line.compare("Witch") == 0) {
             m_cards.push(Witch());
