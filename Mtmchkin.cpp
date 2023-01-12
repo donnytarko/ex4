@@ -18,7 +18,6 @@
 const int maxWordLength = 16;
 
 Mtmchkin::Mtmchkin(const std::string &fileName) {
-    std::cerr << "we here now" << std::endl;
     std::ifstream file(fileName);
     if (!file) {
 		throw DeckFileNotFound();
@@ -26,7 +25,7 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
     int lineNumber = 1;
     std::string line;
     while (std::getline(file, line)) {
-        std::cerr << "line is " << line << std::endl;
+        
         if (line.compare("Gremlin") == 0) {
             m_cards.push(Gremlin());
         }
@@ -49,11 +48,10 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
             m_cards.push(Mana());
         }
         else {
-            std::cerr << "line is " << line << std::endl;
+            
             throw DeckFileFormatError(lineNumber);
         }
         lineNumber++;
-        std::cerr << "line number is " << lineNumber << std::endl;
     }
     if (lineNumber < 6) {
         throw DeckFileInvalidSize();
