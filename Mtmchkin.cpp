@@ -23,10 +23,10 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
     if (!file) {
 		throw DeckFileNotFound();
     }
-    int lineNumber = 1;
+    int lineNumber = 0;
     std::string line;
     while (std::getline(file, line)) {
-        
+        lineNumber++;
         if (line.compare("Gremlin") == 0) {
             m_cards.push(Gremlin());
         }
@@ -51,10 +51,9 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
             m_cards.push(Mana());
         }
         else {
-            
             throw DeckFileFormatError(lineNumber);
         }
-        lineNumber++;
+        std::cerr << lineNumber << std::endl;
     }
     if (lineNumber < 6) {
         throw DeckFileInvalidSize();
