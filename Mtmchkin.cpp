@@ -25,11 +25,7 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
     }
     int lineNumber = 1;
     std::string line;
-    while (true) {
-        std::getline(file, line);
-        if (line.length() == 0) {
-            break;
-        }
+    while (std::getline(file, line)) {
         std::cerr << "line is " << line << std::endl;
         if (line.compare("Gremlin") == 0) {
             m_cards.push(Gremlin());
