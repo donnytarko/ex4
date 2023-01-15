@@ -52,8 +52,8 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
         }
         std::cerr << lineNumber << std::endl;
     }
-    std::cout.flush();
         std::cout << "we here now" << std::endl;
+        std::cout.flush();
     if (lineNumber < 5) {
         throw DeckFileInvalidSize();
     }
