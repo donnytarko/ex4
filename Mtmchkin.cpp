@@ -14,7 +14,6 @@
 #include "Exception.h"
 #include <fstream>
 #include <string>
-#include <sstream>
 
 const int maxWordLength = 16;
 
@@ -53,6 +52,7 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
         }
         std::cerr << lineNumber << std::endl;
     }
+    std::cout.flush();
         std::cout << "we here now" << std::endl;
     if (lineNumber < 5) {
         throw DeckFileInvalidSize();
