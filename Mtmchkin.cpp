@@ -65,6 +65,8 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
         std::cerr << "and now here" << std::endl;
 
     std::cin >> m_numOfPlayers;
+            std::cerr << "we just c ined " << std::endl;
+
     if (m_numOfPlayers > 6 || m_numOfPlayers < 2) {
         printInvalidTeamSize();
     }
