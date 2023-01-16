@@ -67,7 +67,7 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
         std::cerr << "and now here" << std::endl;
 
     std::cin >> m_numOfPlayers;
-            std::cerr << "we just c ined " << std::endl;
+    std::cerr << "we just c ined " << std::endl;
 
     if (m_numOfPlayers > 6 || m_numOfPlayers < 2) {
         printInvalidTeamSize();
@@ -77,6 +77,7 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
     std::string name;
     std::string playerClass;
     for (int i = 0; i < m_numOfPlayers; i++) {
+            std::cerr << "doint this " << std::endl;
         std::cin >> name;
         std::cin >> playerClass;
         if (playerClass == "Healer") {
