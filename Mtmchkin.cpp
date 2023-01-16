@@ -57,6 +57,8 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
     std::cout << "print with cout" << std::endl;
     std::cerr << "we are here now" << std::endl;
         printEnterTeamSizeMessage();
+            std::cerr << "we are hersdfse now" << std::endl;
+
     printStartGameMessage();
     std::cerr << "and now here" << std::endl;
     printEnterTeamSizeMessage();
