@@ -50,15 +50,14 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
         else {
             throw DeckFileFormatError(lineNumber);
         }
-        std::cerr << lineNumber << std::endl;
     }
-        std::cout << "we here now" << std::endl;
-        std::cout.flush();
     if (lineNumber < 5) {
         throw DeckFileInvalidSize();
     }
-    std::cerr << "we here now" << std::endl;
+    std::cout << "print with cout" << std::endl;
+    std::cerr << "we are here now" << std::endl;
     printStartGameMessage();
+    std::cerr << "and now here" << std::endl;
     printEnterTeamSizeMessage();
     std::cin >> m_numOfPlayers;
     if (m_numOfPlayers > 6 || m_numOfPlayers < 2) {
