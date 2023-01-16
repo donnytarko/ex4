@@ -14,6 +14,7 @@
 #include "Exception.h"
 #include <fstream>
 #include <string>
+#include <iostream>
 
 const int maxWordLength = 16;
 
