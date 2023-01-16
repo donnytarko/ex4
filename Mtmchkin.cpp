@@ -90,6 +90,7 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
             std::cerr << "invalid player class" << std::endl;
         }
     }
+            std::cerr << "doint this now" << std::endl;
 
     m_roundCount = 0;
     m_winnersCount = 0;
