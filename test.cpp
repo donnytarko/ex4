@@ -80,22 +80,16 @@ bool compareFiles(const string &filename1, const string &filename2)
 bool GeneralGameSimulationTest(const string &tempDeckFilename, string input, string deck, string expectedOutputFileName)
 {
     //   init cin from file
-        std::cout << "in here" << std::endl;
     createTextFile(tempDeckFilename+".txt",deck);
-            std::cout << "now here" << std::endl;
     istringstream in(input);
     std::streambuf *cinbuf = std::cin.rdbuf(); //save old buf
     std::cin.rdbuf(in.rdbuf());
-            std::cout << "and now here" << std::endl;
 
     std::ofstream outfile(tempDeckFilename+"out.txt");
-                std::cout << "and now all the way here" << std::endl;
 
     std::streambuf *coutbuf = std::cout.rdbuf(); //save old buf
-                    std::cout << "kdkdkdk" << std::endl;
 
     std::cout.rdbuf(outfile.rdbuf());
-            std::cout << "making game" << std::endl;
 
     Mtmchkin game(tempDeckFilename+".txt");
     while(!game.isGameOver() && game.getNumberOfRounds() < 100){
@@ -196,7 +190,6 @@ bool gameRunTest()
 
 bool dragonDenTest()
 {
-    std::cout << "in da dragooon test" << std::endl;
     const string tmp_file("dragonDen_test");
     string input("2\nJimmy Healer\nPikachu Warrior");
     string deck("Dragon\nDragon\nDragon\nDragon\nDragon");
