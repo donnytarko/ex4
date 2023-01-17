@@ -96,7 +96,9 @@ bool GeneralGameSimulationTest(const string &tempDeckFilename, string input, str
     while(!game.isGameOver() && game.getNumberOfRounds() < 100){
         std::cerr << "playing round" << std::endl;
         game.playRound();
+                std::cerr << "played round now leaderbord" << std::endl;
         game.printLeaderBoard();
+                std::cerr << "leaderboard done" << std::endl;
     }
     std::cerr << "comparing files" << std::endl;
     bool res = compareFiles(tempDeckFilename+"out.txt", expectedOutputFileName);
