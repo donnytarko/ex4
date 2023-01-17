@@ -300,7 +300,6 @@ bool noFileTest()
 
 bool badFormatTest()
 {
-    std::cout << "running this thingyyy now" << std::endl;
     const string tmp_file("badFormat_test");
     string input("2\nItay Healer\nPikachu Ninja");
     string deck("SomeBody Once told me the world is gonna roll me\nWitch\n");
