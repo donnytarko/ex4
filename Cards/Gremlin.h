@@ -1,7 +1,7 @@
 #ifndef GREMLIN_H
 #define GREMLIN_H
 
-const int gremlinStrength = 7;
+const int gremlinStrength = 5;
 const int gremlinLoot = 3;
 const int gremlinDamage = 10;
 
