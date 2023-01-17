@@ -102,14 +102,14 @@ void Mtmchkin::playRound() {
             currentCard.applyEncounter(player);
             m_cards.pop();
             m_cards.push(currentCard);
-            if (isGameOver()) {
-                printGameEndMessage();
-            }
             if (player.getLevel() >= 10) {
                 player.place(++m_winnersCount);
             }
             if (player.isKnockedOut()) {
                 player.place(--m_losersCount);
+            }
+            if (isGameOver()) {
+                printGameEndMessage();
             }
         }
     }
