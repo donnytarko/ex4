@@ -89,7 +89,7 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
         } else {
             std::cerr << "invalid player class" << std::endl;
         }
-        std::cerr << m_players.front() << std::endl;
+        std::cerr << m_players.back() << std::endl;
     }
             std::cerr << "doint this now" << std::endl;
 
