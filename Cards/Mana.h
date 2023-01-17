@@ -6,10 +6,9 @@ class Mana : public Card {
     Mana() : Card("Mana") {}
     void applyEncounter (Player& player) override {
         if (player.getJob() == "Healer") {
-            player.heal(20);
+            player.heal(10);
             printManaMessage(true);
         } else {
-            player.heal(10);
             printManaMessage(false);
         }
     }
