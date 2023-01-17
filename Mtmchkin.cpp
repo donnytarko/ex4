@@ -56,18 +56,11 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
     if (lineNumber < 5) {
         throw DeckFileInvalidSize();
     }
-    std::cout << "print with cout" << std::endl;
-    std::cerr << "we are here now" << std::endl;
-        printEnterTeamSizeMessage();
-            std::cerr << "we are hersdfse now" << std::endl;
 
     printStartGameMessage();
-    std::cerr << "and now here" << std::endl;
     printEnterTeamSizeMessage();
-        std::cerr << "and now here" << std::endl;
 
     std::cin >> m_numOfPlayers;
-    std::cerr << "we just c ined " << std::endl;
 
     if (m_numOfPlayers > 6 || m_numOfPlayers < 2) {
         printInvalidTeamSize();
@@ -77,7 +70,6 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
     std::string name;
     std::string playerClass;
     for (int i = 0; i < m_numOfPlayers; i++) {
-            std::cerr << "doint this " << std::endl;
         std::cin >> name;
         std::cin >> playerClass;
         if (playerClass == "Healer") {
@@ -89,9 +81,7 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
         } else {
             std::cerr << "invalid player class" << std::endl;
         }
-        std::cerr << m_players.back() << std::endl;
     }
-            std::cerr << "doint this now" << std::endl;
 
     m_roundCount = 0;
     m_winnersCount = 0;
@@ -101,9 +91,7 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
 
 void Mtmchkin::playRound() {
     printRoundStartMessage(m_roundCount);
-    std::cerr << "in play round" << std::endl;
     for (Player player : m_players) {
-            std::cerr << "playr is" << player << std::endl;
         if (player.getPlace() == notPlaced) {
             printTurnStartMessage(player.getName());
             Card currentCard = m_cards.front();
@@ -121,7 +109,6 @@ void Mtmchkin::playRound() {
             }
         }
     }
-        std::cerr << "done" << std::endl;
     m_roundCount ++;
 }
 
@@ -131,7 +118,6 @@ int Mtmchkin::getNumberOfRounds() const {
 }
 
 void Mtmchkin::printLeaderBoard() const {
-        std::cerr << "starting to print" << std::endl;
     printLeaderBoardStartMessage();
     for (int i = 1; i <= m_winnersCount; i++) {
         for (Player player : m_players) {
@@ -144,7 +130,6 @@ void Mtmchkin::printLeaderBoard() const {
             }
         }
     }
-            std::cerr << "here" << std::endl;
 
     int currentPlace = m_winnersCount;
     for (Player player : m_players) {
@@ -156,13 +141,10 @@ void Mtmchkin::printLeaderBoard() const {
                                 player.getCoins());
         }
     }
-                std::cerr << "here" << std::endl;
 
     for (; currentPlace <= m_numOfPlayers; currentPlace++) {
-        std::cerr << "current place is " << currentPlace << std::endl;
         for (Player player : m_players) {
             if (player.getPlace() == currentPlace) {
-                std::cerr << "printing " << player << std::endl;
                 printPlayerLeaderBoard(currentPlace, player);
                 printPlayerDetails(std::cout, player.getName(), 
                                     player.getJob(), player.getLevel(), 
@@ -171,7 +153,6 @@ void Mtmchkin::printLeaderBoard() const {
             }
         }
     }
-    std::cerr << "printing board done" << std::endl;
 }
 
 
