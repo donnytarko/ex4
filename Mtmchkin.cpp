@@ -131,6 +131,7 @@ int Mtmchkin::getNumberOfRounds() const {
 }
 
 void Mtmchkin::printLeaderBoard() const {
+        std::cerr << "starting to print" << std::endl;
     printLeaderBoardStartMessage();
     for (int i = 1; i <= m_winnersCount; i++) {
         for (Player player : m_players) {
@@ -164,6 +165,7 @@ void Mtmchkin::printLeaderBoard() const {
             }
         }
     }
+    std::cerr << "printing board done" << std::endl;
 }
 
 
