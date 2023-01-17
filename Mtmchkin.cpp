@@ -85,7 +85,7 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
     m_roundCount = 0;
     m_winnersCount = 0;
     m_losersCount = 0;
-    std::cout << "game created" << std::endl;
+    std::cerr << "game created" << std::endl;
 }
 
 
