@@ -102,7 +102,9 @@ int Player::getAttackStrength() const {
 }
 
 void Player::decreaseStrength() {
-    m_force--;
+    if (m_force > 0) {
+        m_force--;
+    }
 }
 
 void Player::kill() {
