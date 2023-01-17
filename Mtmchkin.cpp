@@ -51,8 +51,8 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
             m_cards.push(new Mana());
         }
         else {
+                        std::cerr << "throwing error" << std::endl;
             throw DeckFileFormatError(lineNumber);
-            std::cerr << "throwing error" << std::endl;
         }
     }
     if (lineNumber < 5) {
