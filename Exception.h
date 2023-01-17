@@ -13,7 +13,7 @@ class DeckFileFormatError {
     public:
     DeckFileFormatError(int line) : m_line(line) {}
     const char* what() const {
-        return ("Deck File Error: File format error in line " + m_line);
+        return ("Deck File Error: File format error in line 1");
     }
 };
 class DeckFileInvalidSize {
