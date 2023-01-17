@@ -15,13 +15,14 @@
 #include <fstream>
 #include <string>
 #include <iostream>
+using std::cout;
 
 const int maxWordLength = 16;
 
 Mtmchkin::Mtmchkin(const std::string &fileName) {
-    std::cout << "yooo" << std::endl;
+    cout << "yooo" << std::endl;
     std::ifstream file(fileName);
-        std::cout << "yooo" << std::endl;
+    cout << "yooo" << std::endl;
     if (!file) {
 		throw DeckFileNotFound();
     }
