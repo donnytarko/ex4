@@ -94,6 +94,7 @@ bool GeneralGameSimulationTest(const string &tempDeckFilename, string input, str
     Mtmchkin game(tempDeckFilename+".txt");
     std::cerr << "running game" << std::endl;
     while(!game.isGameOver() && game.getNumberOfRounds() < 100){
+        std::cerr << "playing round" << std::endl;
         game.playRound();
         game.printLeaderBoard();
     }
