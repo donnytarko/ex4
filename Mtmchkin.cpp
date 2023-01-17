@@ -107,6 +107,7 @@ void Mtmchkin::playRound() {
             if (player.isKnockedOut()) {
                 std::cout << "knock out" << std::endl;
                 player.place(--m_losersCount);
+                std::cout << "losers count is " << m_losersCount << std::endl;
             }
             if (isGameOver()) {
                 printGameEndMessage();
