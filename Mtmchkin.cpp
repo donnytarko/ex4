@@ -31,25 +31,25 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
     while (std::getline(file, line)) {
         lineNumber++;
         if (line.compare("Gremlin") == 0) {
-            m_cards.push(Gremlin());
+            m_cards.push(new Gremlin());
         }
         else if (line.compare("Dragon") == 0) {
-            m_cards.push(Dragon());
+            m_cards.push(new Dragon());
         }
         else if (line.compare("Witch") == 0) {
-            m_cards.push(Witch());
+            m_cards.push(new Witch());
         }
         else if (line.compare("Treasure") == 0) {
-            m_cards.push(Treasure());
+            m_cards.push(new Treasure());
         }
         else if (line.compare("Well") == 0) {
-            m_cards.push(Well());
+            m_cards.push(new Well());
         }
         else if (line.compare("Barfight") == 0) {
-            m_cards.push(Barfight());
+            m_cards.push(new Barfight());
         }
         else if (line.compare("Mana") == 0) {
-            m_cards.push(Mana());
+            m_cards.push(new Mana());
         }
         else {
             throw DeckFileFormatError(lineNumber);
@@ -98,7 +98,7 @@ void Mtmchkin::playRound() {
     for (Player player : m_players) {
         if (player.getPlace() == notPlaced) {
             printTurnStartMessage(player.getName());
-            m_cards.front().applyEncounter(player);
+            m_cards.front()->applyEncounter(player);
             m_cards.push(m_cards.front());
             m_cards.pop();
             if (player.getLevel() >= 10) {
