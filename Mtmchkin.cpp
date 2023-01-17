@@ -121,6 +121,7 @@ void Mtmchkin::playRound() {
             }
         }
     }
+        std::cerr << "done" << std::endl;
     m_roundCount ++;
 }
 
