@@ -118,12 +118,12 @@ int Mtmchkin::getNumberOfRounds() const {
 }
 
 void Mtmchkin::printLeaderBoard() const {
-    std::cout << "printing board" << std::endl;
+    std::cerr << "printing board" << std::endl;
     printLeaderBoardStartMessage();
     for (int i = 1; i <= m_winnersCount; i++) {
         for (Player player : m_players) {
             if (player.getPlace() == i) {
-                std::cout << "printing winner" << std::endl;
+                std::cerr << "printing winner" << std::endl;
                 printPlayerLeaderBoard(player.getPlace(), player);
                 printPlayerDetails(std::cout, player.getName(), 
                                     player.getJob(), player.getLevel(), 
@@ -136,7 +136,7 @@ void Mtmchkin::printLeaderBoard() const {
     int currentPlace = m_winnersCount;
     for (Player player : m_players) {
         if (player.getPlace() == notPlaced) {
-            std::cout << "printing player" << std::endl;
+            std::cerr << "printing player" << std::endl;
             printPlayerLeaderBoard(++currentPlace, player);
             printPlayerDetails(std::cout, player.getName(), 
                                 player.getJob(), player.getLevel(), 
