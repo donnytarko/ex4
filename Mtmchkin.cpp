@@ -131,7 +131,7 @@ void Mtmchkin::printLeaderBoard() const {
 
     int currentPlace = m_winnersCount;
     for (Player player : m_players) {
-        if (player.getPlace() == notPlaced) {
+        if (player.getPlace() == -1) {
             printPlayerLeaderBoard(++currentPlace, player);
             std::cout << "printing player" << std::endl;
         }
