@@ -8,7 +8,6 @@ class Dragon : public Card {
     public:
     Dragon () : Card("Dragon") {}
     void applyEncounter (Player& player) override {
-        std::cout << "applying dragon encounter" << std::endl;
         if (player.getAttackStrength() >= dragonStrength) {
             player.levelUp();
             player.addCoins(dragonLoot);
