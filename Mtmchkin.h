@@ -12,7 +12,7 @@ class Mtmchkin{
 private:
     int m_numOfPlayers, m_roundCount, m_winnersCount, m_losersCount;
     std::queue<Card*> m_cards;
-    std::vector<Player> m_players;
+    std::vector<Player*> m_players;
 public:
     
     /*

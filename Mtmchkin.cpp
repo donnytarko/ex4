@@ -73,11 +73,11 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
         std::cin >> name;
         std::cin >> playerClass;
         if (playerClass == "Healer") {
-            m_players.push_back(Healer(name));
+            m_players.push_back(new Healer(name));
         } else if (playerClass == "Ninja") {
-            m_players.push_back(Ninja(name));
+            m_players.push_back(new Ninja(name));
         } else if (playerClass == "Warrior") {
-            m_players.push_back(Warrior(name));
+            m_players.push_back(new Warrior(name));
         } else {
             std::cerr << "invalid player class" << std::endl;
             i--;
@@ -92,19 +92,18 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
 
 void Mtmchkin::playRound() {
     printRoundStartMessage(m_roundCount);
-    for (Player player : m_players) {
-        if (player.getPlace() == notPlaced) {
-            printTurnStartMessage(player.getName());
-            m_cards.front()->applyEncounter(player);
+    for (Player* player : m_players) {
+        if (player->getPlace() == notPlaced) {
+            printTurnStartMessage(player->getName());
+            m_cards.front()->applyEncounter(*player);
             m_cards.push(m_cards.front());
             m_cards.pop();
-            if (player.getLevel() >= 10) {
-                player.place(++m_winnersCount);
+            if (player->getLevel() >= 10) {
+                player->place(++m_winnersCount);
             }
-            if (player.isKnockedOut()) {
-                player.place(m_numOfPlayers - m_losersCount);
-                player.damage(3);
-                std::cout << "place is " << player.getPlace() << std::endl;
+            if (player->isKnockedOut()) {
+                player->place(m_numOfPlayers - m_losersCount);
+                std::cout << "place is " << player->getPlace() << std::endl;
                 m_losersCount++;
             }
             if (isGameOver()) {
@@ -123,27 +122,26 @@ int Mtmchkin::getNumberOfRounds() const {
 void Mtmchkin::printLeaderBoard() const {
     printLeaderBoardStartMessage();
     for (int i = 1; i <= m_winnersCount; i++) {
-        for (Player player : m_players) {
-            if (player.getPlace() == i) {
-                printPlayerLeaderBoard(player.getPlace(), player);
+        for (Player* player : m_players) {
+            if (player->getPlace() == i) {
+                printPlayerLeaderBoard(player->getPlace(), *player);
             }
         }
     }
 
     int currentPlace = m_winnersCount;
-    for (Player player : m_players) {
-        player.place(3);
-        std::cout << player.getPlace() << std::endl;
-        if (player.getPlace() == -1) {
-            printPlayerLeaderBoard(++currentPlace, player);
+    for (Player* player : m_players) {
+        std::cout << player->getPlace() << std::endl;
+        if (player->getPlace() == -1) {
+            printPlayerLeaderBoard(++currentPlace, *player);
             std::cout << "printing player" << std::endl;
         }
     }
 
     for (; currentPlace < m_numOfPlayers; currentPlace++) {
-        for (Player player : m_players) {
-            if (player.getPlace() == currentPlace) {
-                printPlayerLeaderBoard(currentPlace, player);
+        for (Player* player : m_players) {
+            if (player->getPlace() == currentPlace) {
+                printPlayerLeaderBoard(currentPlace, *player);
             }
         }
     }
