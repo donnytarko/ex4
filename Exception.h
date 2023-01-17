@@ -1,11 +1,10 @@
 #ifndef EXCEPTION_H
 #define EXCEPTION_H
-#include <string>
 
 class DeckFileNotFound {
     public:
-    std::string what() const {
-        return std::string("Deck File Error: File not found");
+    const char* what() const {
+        return "Deck File Error: File not found";
     }
 };
 class DeckFileFormatError {
@@ -13,14 +12,15 @@ class DeckFileFormatError {
     int m_line;
     public:
     DeckFileFormatError(int line) : m_line(line) {}
-    std::string what() const {
-        return (std::string("Deck File Error: File format error in line ") + std::to_string(m_line));
+    const char* what() const {
+        std::string what = "Deck File Error: File format error in line " + m_line;
+        return what.c_str();
     }
 };
 class DeckFileInvalidSize {
     public:
-    std::string what() const {
-        return std::string("Deck File Error: Deck size is invalid");
+    const char* what() const {
+        return "Deck File Error: Deck size is invalid";
     }
 };
 
