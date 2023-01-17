@@ -2,7 +2,7 @@
 #define GREMLIN_H
 
 const int gremlinStrength = 5;
-const int gremlinLoot = 3;
+const int gremlinLoot = 2;
 const int gremlinDamage = 10;
 
 class Gremlin : public Card {
