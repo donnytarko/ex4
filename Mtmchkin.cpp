@@ -103,6 +103,7 @@ void Mtmchkin::playRound() {
             }
             if (player.isKnockedOut()) {
                 player.place(m_numOfPlayers - m_losersCount);
+                std::cout << "place is " << player.getPlace() << std::endl;
                 m_losersCount++;
             }
             if (isGameOver()) {
