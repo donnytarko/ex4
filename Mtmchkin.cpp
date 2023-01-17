@@ -19,6 +19,7 @@
 const int maxWordLength = 16;
 
 Mtmchkin::Mtmchkin(const std::string &fileName) {
+    std::cout << "yooo" << std::endl;
     std::ifstream file(fileName);
     if (!file) {
 		throw DeckFileNotFound();
