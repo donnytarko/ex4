@@ -67,11 +67,11 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
     if (m_numOfPlayers > 6 || m_numOfPlayers < 2) {
         printInvalidTeamSize();
     }
-    printInsertPlayerMessage();
     
     std::string name;
     std::string playerClass;
     for (int i = 0; i < m_numOfPlayers; i++) {
+        printInsertPlayerMessage();
         std::cin >> name;
         std::cin >> playerClass;
         if (playerClass == "Healer") {
@@ -82,6 +82,7 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
             m_players.push_back(Warrior(name));
         } else {
             std::cerr << "invalid player class" << std::endl;
+            i--;
         }
     }
 
