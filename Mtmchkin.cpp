@@ -51,6 +51,7 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
         }
         else {
             throw DeckFileFormatError(lineNumber);
+            std::cerr << "throwing error" << std::endl;
         }
     }
     if (lineNumber < 5) {
