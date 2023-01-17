@@ -27,7 +27,6 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
     int lineNumber = 0;
     std::string line;
     while (std::getline(file, line)) {
-        std::cerr << "reading a line" << std::endl;
         lineNumber++;
         if (line.compare("Gremlin") == 0) {
             m_cards.push(new Gremlin());
@@ -51,7 +50,6 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
             m_cards.push(new Mana());
         }
         else {
-                        std::cerr << "throwing error" << std::endl;
             throw DeckFileFormatError(lineNumber);
         }
     }
@@ -73,6 +71,10 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
     for (int i = 0; i < m_numOfPlayers; i++) {
         printInsertPlayerMessage();
         std::cin >> name;
+        while (name.length() > 15) {
+            printInvalidName();
+            std::cin >> name;
+        }
         std::cin >> playerClass;
         if (playerClass == "Healer") {
             m_players.push_back(new Healer(name));
@@ -81,7 +83,7 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
         } else if (playerClass == "Warrior") {
             m_players.push_back(new Warrior(name));
         } else {
-            std::cerr << "invalid player class" << std::endl;
+            printInvalidClass();
             i--;
         }
     }
