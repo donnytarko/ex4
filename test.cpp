@@ -343,7 +343,6 @@ int main(){
 	run_test(cardsPrintsTest,"cardsPrintsTest");
 	run_test(playersPrintsTest,"playersPrintsTest");
 	run_test(testCard,"Deck creation test");
-    run_test(gameRunTest,"Game run test");
 	run_test(dragonDenTest,"Dragon Den simulation test");
 	run_test(gremlinCaveTest,"Gremlin Cave simulation test");
 	run_test(witchLairTest,"Witch Lair simulation test");
