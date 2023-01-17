@@ -101,7 +101,9 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
 
 void Mtmchkin::playRound() {
     printRoundStartMessage(m_roundCount);
+    std::cerr << "in play round" << std::endl;
     for (Player player : m_players) {
+            std::cerr << "playr is" << player << std::endl;
         if (player.getPlace() == notPlaced) {
             printTurnStartMessage(player.getName());
             Card currentCard = m_cards.front();
