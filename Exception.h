@@ -13,7 +13,8 @@ class DeckFileFormatError {
     public:
     DeckFileFormatError(int line) : m_line(line) {}
     const char* what() const {
-        std::string what = "Deck File Error: File format error in line " + m_line;
+        std::string what = "Deck File Error: File format error in line ";
+        what += std::to_string(m_line);
         return what.c_str();
     }
 };
