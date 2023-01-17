@@ -158,7 +158,7 @@ void Mtmchkin::printLeaderBoard() const {
     }
                 std::cerr << "here" << std::endl;
 
-    for (; currentPlace >= m_numOfPlayers; currentPlace++) {
+    for (; currentPlace <= m_numOfPlayers; currentPlace++) {
         std::cerr << "current place is " << currentPlace << std::endl;
         for (Player player : m_players) {
             if (player.getPlace() == currentPlace) {
