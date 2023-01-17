@@ -84,13 +84,14 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
         }
     }
 
-    m_roundCount = 1;
+    m_roundCount = 0;
     m_winnersCount = 0;
     m_losersCount = 0;
 }
 
 
 void Mtmchkin::playRound() {
+    m_roundCount ++;
     printRoundStartMessage(m_roundCount);
     for (Player* player : m_players) {
         if (player->getPlace() == notPlaced) {
@@ -110,7 +111,6 @@ void Mtmchkin::playRound() {
             }
         }
     }
-    m_roundCount ++;
 }
 
 
