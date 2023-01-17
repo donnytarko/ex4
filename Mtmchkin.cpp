@@ -20,9 +20,7 @@ using std::cout;
 const int maxWordLength = 16;
 
 Mtmchkin::Mtmchkin(const std::string &fileName) {
-    cout << "yooo" << std::endl;
     std::ifstream file(fileName);
-    cout << "yooo" << std::endl;
     if (!file) {
 		throw DeckFileNotFound();
     }
@@ -89,7 +87,6 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
     m_roundCount = 1;
     m_winnersCount = 0;
     m_losersCount = 0;
-    std::cerr << "game created" << std::endl;
 }
 
 
@@ -105,10 +102,8 @@ void Mtmchkin::playRound() {
                 player.place(++m_winnersCount);
             }
             if (player.isKnockedOut()) {
-                std::cout << "knock out" << std::endl;
                 player.place(m_numOfPlayers - m_losersCount);
                 m_losersCount++;
-                std::cout << "losers count is " << m_losersCount << std::endl;
             }
             if (isGameOver()) {
                 printGameEndMessage();
