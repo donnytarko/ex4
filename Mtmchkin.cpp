@@ -138,6 +138,7 @@ void Mtmchkin::printLeaderBoard() const {
     int currentPlace = m_winnersCount;
     for (Player player : m_players) {
         if (player.getPlace() == notPlaced) {
+            std::cout << "printing not placed" << std::endl;
             printPlayerLeaderBoard(++currentPlace, player);
             printPlayerDetails(std::cout, player.getName(), 
                                 player.getJob(), player.getLevel(), 
@@ -149,6 +150,7 @@ void Mtmchkin::printLeaderBoard() const {
     for (; currentPlace < m_numOfPlayers; currentPlace++) {
         for (Player player : m_players) {
             if (player.getPlace() == currentPlace) {
+                            std::cout << "printing lost" << std::endl;
                 printPlayerLeaderBoard(currentPlace, player);
                 printPlayerDetails(std::cout, player.getName(), 
                                     player.getJob(), player.getLevel(), 
