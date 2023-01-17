@@ -98,10 +98,9 @@ void Mtmchkin::playRound() {
     for (Player player : m_players) {
         if (player.getPlace() == notPlaced) {
             printTurnStartMessage(player.getName());
-            Card currentCard = m_cards.front();
-            currentCard.applyEncounter(player);
+            m_cards.front().applyEncounter(player);
+            m_cards.push(m_cards.front());
             m_cards.pop();
-            m_cards.push(currentCard);
             if (player.getLevel() >= 10) {
                 player.place(++m_winnersCount);
             }
