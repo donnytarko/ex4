@@ -87,8 +87,9 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
         } else if (playerClass == "Warrior") {
             m_players.push_back(Warrior(name));
         } else {
-            std::cerr << m_players.front() << std::endl;
+            std::cerr << "invalid player class" << std::endl;
         }
+        std::cerr << m_players.front() << std::endl;
     }
             std::cerr << "doint this now" << std::endl;
 
