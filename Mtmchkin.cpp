@@ -128,10 +128,10 @@ void Mtmchkin::printLeaderBoard() const {
         }
     }
 
-    int currentPlace = m_winnersCount;
+    int currentPlace = m_winnersCount + 1;
     for (Player* player : m_players) {
         if (player->getPlace() == notPlaced) {
-            printPlayerLeaderBoard(++currentPlace, *player);
+            printPlayerLeaderBoard(currentPlace++, *player);
         }
     }
 
