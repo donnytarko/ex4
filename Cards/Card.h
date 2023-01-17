@@ -33,7 +33,7 @@ public:
      * @return
      *      void
     */
-    virtual void applyEncounter(Player& player);
+    virtual void applyEncounter(Player& player) = 0;
 
     Card(const Card&) = default;
     ~Card() = default;
