@@ -147,5 +147,5 @@ void Mtmchkin::printLeaderBoard() const {
 
 
 bool Mtmchkin::isGameOver() const{
-    return (m_losersCount == m_numOfPlayers || m_winnersCount == m_numOfPlayers);
+    return (m_losersCount + m_winnersCount == m_numOfPlayers);
 }
