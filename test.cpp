@@ -81,13 +81,13 @@ bool GeneralGameSimulationTest(const string &tempDeckFilename, string input, str
 {
     //   init cin from file
     createTextFile(tempDeckFilename+".txt",deck);
-    /*istringstream in(input);
+    istringstream in(input);
     std::streambuf *cinbuf = std::cin.rdbuf(); //save old buf
     std::cin.rdbuf(in.rdbuf());
 
     std::ofstream outfile(tempDeckFilename+"out.txt");
     std::streambuf *coutbuf = std::cout.rdbuf(); //save old buf
-    std::cout.rdbuf(outfile.rdbuf());*/
+    std::cout.rdbuf(outfile.rdbuf());
     Mtmchkin game(tempDeckFilename+".txt");
     while(!game.isGameOver() && game.getNumberOfRounds() < 100){
         game.playRound();
@@ -95,9 +95,9 @@ bool GeneralGameSimulationTest(const string &tempDeckFilename, string input, str
     }
 
     bool res = compareFiles(tempDeckFilename+"out.txt", expectedOutputFileName);
-	//outfile.close();
-    //std::cin.rdbuf(cinbuf);
-    //std::cout.rdbuf(coutbuf);
+	outfile.close();
+    std::cin.rdbuf(cinbuf);
+    std::cout.rdbuf(coutbuf);
     deleteTextFile(tempDeckFilename+".txt");
     return res;
 }
