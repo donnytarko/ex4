@@ -132,6 +132,7 @@ void Mtmchkin::printLeaderBoard() const {
     for (Player player : m_players) {
         if (player.getPlace() == notPlaced) {
             printPlayerLeaderBoard(++currentPlace, player);
+            std::cout << "printing player" << std::endl;
         }
     }
 
