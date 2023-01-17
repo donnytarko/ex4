@@ -68,14 +68,31 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
     
     std::string name;
     std::string playerClass;
+    bool invalidClass = false;
+    bool invalidName = false;
     for (int i = 0; i < m_numOfPlayers; i++) {
-        printInsertPlayerMessage();
-        std::cin >> name;
-        while (name.length() > 15) {
-            printInvalidName();
-            std::cin >> name;
+        if (!invalidClass && !invalidName) {
+            printInsertPlayerMessage();
         }
+        if (invalidName) {
+            printInvalidName();
+            invalidName = false;
+        } 
+        if (invalidClass) {
+            printInvalidClass();
+            invalidClass = false;
+        }
+        
+        std::cin >> name;
+
+        if (name.length() > 15) {
+            invalidName = true;
+            i--;
+            continue;
+        }
+
         std::cin >> playerClass;
+
         if (playerClass == "Healer") {
             m_players.push_back(new Healer(name));
         } else if (playerClass == "Ninja") {
@@ -83,8 +100,8 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
         } else if (playerClass == "Warrior") {
             m_players.push_back(new Warrior(name));
         } else {
-            printInvalidClass();
             i--;
+            invalidClass = true;
         }
     }
 
