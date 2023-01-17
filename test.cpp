@@ -92,13 +92,14 @@ bool GeneralGameSimulationTest(const string &tempDeckFilename, string input, str
     std::cout.rdbuf(outfile.rdbuf());
 
     Mtmchkin game(tempDeckFilename+".txt");
+    std::cerr << "running game" << std::endl;
     while(!game.isGameOver() && game.getNumberOfRounds() < 100){
         game.playRound();
         game.printLeaderBoard();
     }
-    std::cout << "comparing files" << std::endl;
+    std::cerr << "comparing files" << std::endl;
     bool res = compareFiles(tempDeckFilename+"out.txt", expectedOutputFileName);
-        std::cout << "done comparing files" << std::endl;
+        std::cerr << "done comparing files" << std::endl;
 	outfile.close();
     std::cin.rdbuf(cinbuf);
     std::cout.rdbuf(coutbuf);
