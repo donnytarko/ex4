@@ -144,6 +144,8 @@ void Mtmchkin::printLeaderBoard() const {
             }
         }
     }
+            std::cerr << "here" << std::endl;
+
     int currentPlace = m_winnersCount;
     for (Player player : m_players) {
         if (player.getPlace() == notPlaced) {
@@ -154,6 +156,8 @@ void Mtmchkin::printLeaderBoard() const {
                                 player.getCoins());
         }
     }
+                std::cerr << "here" << std::endl;
+
     for (; currentPlace >= m_numOfPlayers; currentPlace++) {
         for (Player player : m_players) {
             if (player.getPlace() == currentPlace) {
