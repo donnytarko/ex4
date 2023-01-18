@@ -119,7 +119,7 @@ void Mtmchkin::playRound() {
         if (m_players.at(i)->getPlace() == notPlaced) {
             printTurnStartMessage(m_players.at(i)->getName());
             m_cards.front()->applyEncounter(*m_players.at(i));
-            m_cards.push(m_cards.front());
+            m_cards.push(std::move(m_cards.front()));
             m_cards.pop();
             if (m_players.at(i)->getLevel() >= 10) {
                 m_players.at(i)->place(++m_winnersCount);
