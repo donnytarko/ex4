@@ -5,7 +5,7 @@
 class Warrior : public Player {
     public:
     Warrior(std::string name) : Player(name, "Warrior") {}
-    int getAttackStrength() const override { return (m_level + (2 * m_force)); }
+    int getAttackStrength() const override;
 };
 
 #endif

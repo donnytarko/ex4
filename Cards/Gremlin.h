@@ -11,17 +11,7 @@ class Gremlin : public Card {
     Gremlin () : Card("Gremlin") {
 
     }
-    void applyEncounter (Player& player) override {
-        if (player.getAttackStrength() >= gremlinStrength) {
-            player.levelUp();
-            player.addCoins(gremlinLoot);
-            printWinBattle(player.getName(), "Gremlin");
-        }
-        else {
-            player.damage(gremlinDamage);
-            printLossBattle(player.getName(), "Gremlin");
-        }
-    }
+    void applyEncounter (Player& player) override;
 };
 
 #endif
