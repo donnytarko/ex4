@@ -1,5 +1,6 @@
 #ifndef Warrior_H
 #define Warrior_H
+#include "Player.h"
 
 class Warrior : public Player {
     public:

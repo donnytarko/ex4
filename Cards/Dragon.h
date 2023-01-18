@@ -1,6 +1,6 @@
 #ifndef DRAGON_H
 #define DRAGON_H
-
+#include "Card.h"
 const int dragonStrength = 25;
 const int dragonLoot = 1000;
 

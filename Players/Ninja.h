@@ -1,5 +1,6 @@
 #ifndef Ninja_H
 #define Ninja_H
+#include "Player.h"
 
 class Ninja : public Player {
     public:

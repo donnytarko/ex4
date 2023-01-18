@@ -1,5 +1,6 @@
 #ifndef GREMLIN_H
 #define GREMLIN_H
+#include "Card.h"
 
 const int gremlinStrength = 5;
 const int gremlinLoot = 2;

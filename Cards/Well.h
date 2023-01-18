@@ -1,5 +1,6 @@
 #ifndef WELL_H
 #define WELL_H
+#include "Card.h"
 
 const int wellDamage = 10;
 

@@ -1,5 +1,6 @@
 #ifndef TREASURE_H
 #define TREASURE_H
+#include "Card.h"
 
 const int coinsAmount = 10;
 

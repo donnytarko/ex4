@@ -1,5 +1,6 @@
 #ifndef WITCH_H
 #define WITCH_H
+#include "Card.h"
 
 const int witchStrength = 11;
 const int witchLoot = 2;
