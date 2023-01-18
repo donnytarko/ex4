@@ -36,7 +36,7 @@ public:
     virtual void applyEncounter(Player& player) = 0;
 
     Card(const Card&) = default;
-    ~Card() = default;
+    virtual ~Card() = default;
     Card& operator=(const Card& other) = default;
     friend std::ostream& operator<<(std::ostream& os, const Card& card);
 };

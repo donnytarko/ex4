@@ -16,6 +16,7 @@
 #include <string>
 #include <iostream>
 using std::cout;
+using std::shared_ptr;
 
 const int maxWordLength = 16;
 
@@ -29,25 +30,25 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
     while (std::getline(file, line)) {
         lineNumber++;
         if (line.compare("Gremlin") == 0) {
-            m_cards.push(new Gremlin());
+            m_cards.push(std::shared_ptr<Card> (new Gremlin()));
         }
         else if (line.compare("Dragon") == 0) {
-            m_cards.push(new Dragon());
+            m_cards.push(std::shared_ptr<Card> (new Dragon()));
         }
         else if (line.compare("Witch") == 0) {
-            m_cards.push(new Witch());
+            m_cards.push(std::shared_ptr<Card> (new Witch()));
         }
         else if (line.compare("Treasure") == 0) {
-            m_cards.push(new Treasure());
+            m_cards.push(std::shared_ptr<Card> (new Treasure()));
         }
         else if (line.compare("Well") == 0) {
-            m_cards.push(new Well());
+            m_cards.push(std::shared_ptr<Card> (new Well()));
         }
         else if (line.compare("Barfight") == 0) {
-            m_cards.push(new Barfight());
+            m_cards.push(std::shared_ptr<Card> (new Barfight()));
         }
         else if (line.compare("Mana") == 0) {
-            m_cards.push(new Mana());
+            m_cards.push(std::shared_ptr<Card> (new Mana()));
         }
         else {
             throw DeckFileFormatError(lineNumber);
@@ -94,11 +95,11 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
         std::cin >> playerClass;
 
         if (playerClass == "Healer") {
-            m_players.push_back(new Healer(name));
+            m_players.push_back(shared_ptr<Player> (new Healer(name)));
         } else if (playerClass == "Ninja") {
-            m_players.push_back(new Ninja(name));
+            m_players.push_back(shared_ptr<Player> (new Ninja(name)));
         } else if (playerClass == "Warrior") {
-            m_players.push_back(new Warrior(name));
+            m_players.push_back(shared_ptr<Player> (new Warrior(name)));
         } else {
             i--;
             invalidClass = true;
@@ -114,7 +115,7 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
 void Mtmchkin::playRound() {
     m_roundCount ++;
     printRoundStartMessage(m_roundCount);
-    for (Player* player : m_players) {
+    for (shared_ptr<Player> player : m_players) {
         if (player->getPlace() == notPlaced) {
             printTurnStartMessage(player->getName());
             m_cards.front()->applyEncounter(*player);
@@ -142,7 +143,7 @@ int Mtmchkin::getNumberOfRounds() const {
 void Mtmchkin::printLeaderBoard() const {
     printLeaderBoardStartMessage();
     for (int i = 1; i <= m_winnersCount; i++) {
-        for (Player* player : m_players) {
+        for (shared_ptr<Player> player : m_players) {
             if (player->getPlace() == i) {
                 printPlayerLeaderBoard(player->getPlace(), *player);
             }
@@ -150,14 +151,14 @@ void Mtmchkin::printLeaderBoard() const {
     }
 
     int currentPlace = m_winnersCount + 1;
-    for (Player* player : m_players) {
+    for (shared_ptr<Player> player : m_players) {
         if (player->getPlace() == notPlaced) {
             printPlayerLeaderBoard(currentPlace++, *player);
         }
     }
 
     for (; currentPlace <= m_numOfPlayers; currentPlace++) {
-        for (Player* player : m_players) {
+        for (shared_ptr<Player> player : m_players) {
             if (player->getPlace() == currentPlace) {
                 printPlayerLeaderBoard(currentPlace, *player);
             }
@@ -168,15 +169,5 @@ void Mtmchkin::printLeaderBoard() const {
 
 
 bool Mtmchkin::isGameOver() const{
-    if (m_losersCount + m_winnersCount == m_numOfPlayers) {
-        for (Player* player : m_players) {
-            delete player;
-        }
-        while (!m_cards.empty()) {
-            delete m_cards.front();
-            m_cards.pop();
-        }
-        return true;
-    }
-    return false;
+    return (m_losersCount + m_winnersCount == m_numOfPlayers);
 }
