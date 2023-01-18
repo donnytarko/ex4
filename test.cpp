@@ -337,7 +337,7 @@ bool badFormatStartTest()
 // --------------------------------       Main function          ------------------------------
 
 int main(){
-    
+    run_test(gameRunTest, "game run test");
 	run_test(cardsPrintsTest,"cardsPrintsTest");
 	run_test(playersPrintsTest,"playersPrintsTest");
 	run_test(testCard,"Deck creation test");
