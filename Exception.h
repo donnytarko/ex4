@@ -15,7 +15,7 @@ class DeckFileFormatError : std::exception{
     const char* what() const throw() override {
         std::string error = "Deck File Error: File format error in line ";
         error += std::to_string(m_line);
-        return error.c_str();
+        return (const char*)error.c_str();
     }
 };
 class DeckFileInvalidSize : std::exception{
