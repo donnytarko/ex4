@@ -15,6 +15,7 @@
 #include <fstream>
 #include <string>
 #include <iostream>
+#include <memory>
 using std::cout;
 
 const int maxWordLength = 16;
