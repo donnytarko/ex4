@@ -16,7 +16,6 @@
 #include <string>
 #include <iostream>
 using std::cout;
-using std::unique_ptr;
 
 const int maxWordLength = 16;
 
@@ -30,25 +29,25 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
     while (std::getline(file, line)) {
         lineNumber++;
         if (line.compare("Gremlin") == 0) {
-            m_cards.push(std::unique_ptr<Card> (new Gremlin()));
+            m_cards.push(std::unique_ptr<Card>(new Gremlin()));
         }
         else if (line.compare("Dragon") == 0) {
-            m_cards.push(std::unique_ptr<Card> (new Dragon()));
+            m_cards.push(std::unique_ptr<Card>(new Dragon()));
         }
         else if (line.compare("Witch") == 0) {
-            m_cards.push(std::unique_ptr<Card> (new Witch()));
+            m_cards.push(std::unique_ptr<Card>(new Witch()));
         }
         else if (line.compare("Treasure") == 0) {
-            m_cards.push(std::unique_ptr<Card> (new Treasure()));
+            m_cards.push(std::unique_ptr<Card>(new Treasure()));
         }
         else if (line.compare("Well") == 0) {
-            m_cards.push(std::unique_ptr<Card> (new Well()));
+            m_cards.push(std::unique_ptr<Card>(new Well()));
         }
         else if (line.compare("Barfight") == 0) {
-            m_cards.push(std::unique_ptr<Card> (new Barfight()));
+            m_cards.push(std::unique_ptr<Card>(new Barfight()));
         }
         else if (line.compare("Mana") == 0) {
-            m_cards.push(std::unique_ptr<Card> (new Mana()));
+            m_cards.push(std::unique_ptr<Card>(new Mana()));
         }
         else {
             throw DeckFileFormatError(lineNumber);
@@ -95,11 +94,11 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
         std::cin >> playerClass;
 
         if (playerClass == "Healer") {
-            m_players.push_back(unique_ptr<Player> (new Healer(name)));
+            m_players.push_back(std::unique_ptr<Player>(new Healer(name)));
         } else if (playerClass == "Ninja") {
-            m_players.push_back(unique_ptr<Player> (new Ninja(name)));
+            m_players.push_back(std::unique_ptr<Player>(new Ninja(name)));
         } else if (playerClass == "Warrior") {
-            m_players.push_back(unique_ptr<Player> (new Warrior(name)));
+            m_players.push_back(std::unique_ptr<Player>(new Warrior(name)));
         } else {
             i--;
             invalidClass = true;
