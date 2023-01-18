@@ -1,4 +1,4 @@
-#include "Mtmchkin.h"
+/*#include "Mtmchkin.h"
 #include <string>
 #include <iostream>
 using std::istringstream;
@@ -25,4 +25,4 @@ int main() {
 
     std::cin.rdbuf(cinbuf);
     return 0;
-}
+}*/
