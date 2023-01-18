@@ -71,7 +71,7 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
     std::string playerClass;
     bool invalidClass = false;
     bool invalidName = false;
-    for (int i = 0; i < m_numOfPlayers; i++) {
+    for (unsigned int i = 0; i < m_numOfPlayers; i++) {
         if (!invalidClass && !invalidName) {
             printInsertPlayerMessage();
         }
@@ -115,7 +115,7 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
 void Mtmchkin::playRound() {
     m_roundCount ++;
     printRoundStartMessage(m_roundCount);
-    for (int i = 0; i < m_players.size(); i++) {
+    for (unsigned int i = 0; i < m_players.size(); i++) {
         if (m_players.at(i)->getPlace() == notPlaced) {
             printTurnStartMessage(m_players.at(i)->getName());
             m_cards.front()->applyEncounter(*m_players.at(i));
@@ -143,7 +143,7 @@ int Mtmchkin::getNumberOfRounds() const {
 void Mtmchkin::printLeaderBoard() const {
     printLeaderBoardStartMessage();
     for (int i = 1; i <= m_winnersCount; i++) {
-        for (int i = 0; i < m_players.size(); i++) {
+        for (unsigned int i = 0; i < m_players.size(); i++) {
             if (m_players.at(i)->getPlace() == i) {
                 printPlayerLeaderBoard(m_players.at(i)->getPlace(), *m_players.at(i));
             }
@@ -151,14 +151,14 @@ void Mtmchkin::printLeaderBoard() const {
     }
 
     int currentPlace = m_winnersCount + 1;
-    for (int i = 0; i < m_players.size(); i++) {
+    for (unsigned int i = 0; i < m_players.size(); i++) {
         if (m_players.at(i)->getPlace() == notPlaced) {
             printPlayerLeaderBoard(currentPlace++, *m_players.at(i));
         }
     }
 
     for (; currentPlace <= m_numOfPlayers; currentPlace++) {
-        for (int i = 0; i < m_players.size(); i++) {
+        for (unsigned int i = 0; i < m_players.size(); i++) {
             if (m_players.at(i)->getPlace() == currentPlace) {
                 printPlayerLeaderBoard(currentPlace, *m_players.at(i));
             }
