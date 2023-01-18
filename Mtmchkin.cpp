@@ -82,7 +82,7 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
             printInvalidClass();
             invalidClass = false;
         }
-        
+
         std::cin >> name;
 
         if (name.length() > 15) {
@@ -168,5 +168,15 @@ void Mtmchkin::printLeaderBoard() const {
 
 
 bool Mtmchkin::isGameOver() const{
-    return (m_losersCount + m_winnersCount == m_numOfPlayers);
+    if (m_losersCount + m_winnersCount == m_numOfPlayers) {
+        for (Player* player : m_players) {
+            delete player;
+        }
+        while (!m_cards.empty()) {
+            delete m_cards.front();
+            m_cards.pop();
+        }
+        return true;
+    }
+    return false;
 }
