@@ -1,5 +1,6 @@
 #ifndef EXCEPTION_H
 #define EXCEPTION_H
+#include <string>
 
 class DeckFileNotFound : std::exception {
     public:
@@ -9,13 +10,14 @@ class DeckFileNotFound : std::exception {
 };
 class DeckFileFormatError : std::exception{
     private:
-    int m_line;
+    std::string m_error;
     public:
-    DeckFileFormatError(int line) : m_line(line) {}
-    const char* what() const throw() override {
+    DeckFileFormatError(int line) {
         std::string error = "Deck File Error: File format error in line ";
-        error += std::to_string(m_line);
-        return (const char*)error.c_str();
+        m_error = error + std::to_string(line);
+    }
+    const char* what() const throw() override {
+        return m_error.c_str();
     }
 };
 class DeckFileInvalidSize : std::exception{
