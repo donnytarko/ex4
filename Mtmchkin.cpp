@@ -143,9 +143,9 @@ int Mtmchkin::getNumberOfRounds() const {
 void Mtmchkin::printLeaderBoard() const {
     printLeaderBoardStartMessage();
     for (int i = 1; i <= m_winnersCount; i++) {
-        for (int i = 0; i < (int)m_players.size(); i++) {
-            if (m_players.at(i)->getPlace() == i) {
-                printPlayerLeaderBoard(m_players.at(i)->getPlace(), *m_players.at(i));
+        for (int j = 0; j < (int)m_players.size(); j++) {
+            if (m_players.at(j)->getPlace() == i) {
+                printPlayerLeaderBoard(m_players.at(j)->getPlace(), *m_players.at(j));
             }
         }
     }
