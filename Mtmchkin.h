@@ -6,13 +6,13 @@
 #include <vector>
 #include <string>
 #include <iostream>
-using std::shared_ptr;
+using std::unique_ptr;
 
 class Mtmchkin{
 private:
     int m_numOfPlayers, m_roundCount, m_winnersCount, m_losersCount;
-    std::queue<shared_ptr<Card>> m_cards;
-    std::vector<shared_ptr<Player>> m_players;
+    std::queue<unique_ptr<Card>> m_cards;
+    std::vector<unique_ptr<Player>> m_players;
 public:
     
     /*
