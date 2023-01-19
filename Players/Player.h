@@ -15,7 +15,7 @@ class Player {
     public:
     Player(std::string name, std::string playerClass);
     Player() = default;
-    ~Player() = default;
+    virtual ~Player() {};
     Player& operator=(const Player& other) = default;
     void printInfo() const;
     void levelUp();

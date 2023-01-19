@@ -17,8 +17,6 @@
 #include <iostream>
 #include <memory>
 
-const int maxWordLength = 16;
-
 Mtmchkin::Mtmchkin(const std::string &fileName) {
     printStartGameMessage();
     std::ifstream file(fileName);
