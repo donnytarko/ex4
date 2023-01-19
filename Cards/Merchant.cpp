@@ -5,11 +5,6 @@ void Merchant::applyEncounter (Player& player) {
     int response;
     int amountPayed = 0;
     std::cin >> response;
-    while (response != 2 && response != 1 && response != 0 ) {
-        printInvalidInput();
-        printMerchantInitialMessageForInteractiveEncounter(std::cout, player.getName(), player.getCoins());
-        std::cin >> response;
-    }
     if (response == 1) {
         if (player.pay(5)) {
             player.heal(1);

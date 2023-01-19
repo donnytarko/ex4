@@ -51,24 +51,17 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
         else {
             throw DeckFileFormatError(lineNumber);
         }
-        if (lineNumber == 200) {
-            break;
-        }
     }
     if (lineNumber < 5) {
         throw DeckFileInvalidSize();
     }
 
     printEnterTeamSizeMessage();
-    int counter = 0;
+
     do {
         std::cin >> m_numOfPlayers;
         if (m_numOfPlayers > 6 || m_numOfPlayers < 2) {
             printInvalidTeamSize();
-        }
-        counter++;
-        if (counter == 100) {
-            break;
         }
     } while (m_numOfPlayers > 6 || m_numOfPlayers < 2);
     
