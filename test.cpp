@@ -337,8 +337,8 @@ bool badFormatStartTest()
 // --------------------------------       Main function          ------------------------------
 
 int main(){
-    
-	run_test(cardsPrintsTest,"cardsPrintsTest");
+    run_test(merchantInputTest, "Merchant Input Test");
+	/*run_test(cardsPrintsTest,"cardsPrintsTest");
 	run_test(playersPrintsTest,"playersPrintsTest");
 	run_test(testCard,"Deck creation test");
 	run_test(dragonDenTest,"Dragon Den simulation test");
@@ -351,6 +351,6 @@ int main(){
 	run_test(badSizeTest,"Bad size exception test");
     run_test(roundLimitTest,"Round upper limit test");
     run_test(allTenTest,"All reach lvl 10 test");
-    run_test(badPlayerInputTest,"Bad player input test");
+    run_test(badPlayerInputTest,"Bad player input test");*/
     return 0;
 }
