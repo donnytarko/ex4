@@ -58,7 +58,6 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
         throw DeckFileInvalidSize();
     }
 
-    printStartGameMessage();
     printEnterTeamSizeMessage();
 
     std::cin >> m_numOfPlayers;
