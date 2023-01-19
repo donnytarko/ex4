@@ -1,5 +1,5 @@
-#ifndef Monster_H
-#define Warrior_H
+#ifndef MONSTER_H
+#define MONSTER_H
 #include "Card.h"
 #include <string>
 
