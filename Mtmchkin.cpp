@@ -10,6 +10,7 @@
 #include "Cards/Well.h"
 #include "Cards/Barfight.h"
 #include "Cards/Mana.h"
+#include "Cards/Merchant.h"
 #include "utilities.h"
 #include "Exception.h"
 #include <fstream>
@@ -47,6 +48,9 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
         }
         else if (line.compare("Mana") == 0) {
             m_cards.push(std::unique_ptr<Card>(new Mana()));
+        }
+        else if (line.compare("Merchant") == 0) {
+            m_cards.push(std::unique_ptr<Card>(new Merchant()));
         }
         else {
             throw DeckFileFormatError(lineNumber);
