@@ -1,9 +1,9 @@
 #include "Dragon.h"
 
 void Dragon::applyEncounter (Player& player) {
-    if (player.getAttackStrength() >= dragonStrength) {
+    if (player.getAttackStrength() >= m_strength) {
         player.levelUp();
-        player.addCoins(dragonLoot);
+        player.addCoins(m_loot);
         printWinBattle(player.getName(), "Dragon");
     }
     else {

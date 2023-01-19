@@ -1,13 +1,10 @@
 #ifndef WITCH_H
 #define WITCH_H
-#include "Card.h"
+#include "Monster.h"
 
-const int witchStrength = 11;
-const int witchLoot = 2;
-const int witchDamage = 10;
-class Witch : public Card {
+class Witch : public Monster {
     public:
-    Witch() : Card("Witch") {}
+    Witch() : Monster("Witch") {}
     void applyEncounter (Player& player) override;
 };
 

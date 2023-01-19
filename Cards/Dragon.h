@@ -1,12 +1,10 @@
 #ifndef DRAGON_H
 #define DRAGON_H
-#include "Card.h"
-const int dragonStrength = 25;
-const int dragonLoot = 1000;
+#include "Monster.h"
 
-class Dragon : public Card {
+class Dragon : public Monster {
     public:
-    Dragon () : Card("Dragon") {}
+    Dragon () : Monster("Dragon") {}
     void applyEncounter (Player& player) override;
 };
 

@@ -1,13 +1,13 @@
 #include "Gremlin.h"
 
 void Gremlin::applyEncounter (Player& player) {
-    if (player.getAttackStrength() >= gremlinStrength) {
+    if (player.getAttackStrength() >= m_strength) {
         player.levelUp();
-        player.addCoins(gremlinLoot);
+        player.addCoins(m_loot);
         printWinBattle(player.getName(), "Gremlin");
     }
     else {
-        player.damage(gremlinDamage);
+        player.damage(m_damage);
         printLossBattle(player.getName(), "Gremlin");
     }
 }
