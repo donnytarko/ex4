@@ -17,7 +17,6 @@ class Player {
     Player() = default;
     virtual ~Player() {};
     Player& operator=(const Player& other) = default;
-    void printInfo() const;
     void levelUp();
     std::string getName() const;
     int getLevel() const;

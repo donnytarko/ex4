@@ -20,9 +20,6 @@ std::ostream& operator<<(std::ostream& os, const Player& player) {
     return os;
 }
 
-void Player::printInfo() const {
-}
-
 std::string Player::getName() const {
     return m_name;
 }
