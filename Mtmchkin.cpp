@@ -60,8 +60,6 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
 
     printEnterTeamSizeMessage();
 
-    std::cin >> m_numOfPlayers;
-
     do {
         std::cin >> m_numOfPlayers;
         if (m_numOfPlayers > 6 || m_numOfPlayers < 2) {
