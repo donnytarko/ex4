@@ -62,9 +62,12 @@ Mtmchkin::Mtmchkin(const std::string &fileName) {
 
     std::cin >> m_numOfPlayers;
 
-    if (m_numOfPlayers > 6 || m_numOfPlayers < 2) {
-        printInvalidTeamSize();
-    }
+    do {
+        std::cin >> m_numOfPlayers;
+        if (m_numOfPlayers > 6 || m_numOfPlayers < 2) {
+            printInvalidTeamSize();
+        }
+    } while (m_numOfPlayers > 6 || m_numOfPlayers < 2);
     
     std::string name;
     std::string playerClass;
