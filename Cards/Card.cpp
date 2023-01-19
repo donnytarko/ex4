@@ -1,14 +1,20 @@
 #include <iostream>
-#include "Card.h"
-#include "Witch.h"
-#include "Gremlin.h"
-#include "Dragon.h"
+#include "Monster.h"
 #include "../Players/Player.h"
 #include "../utilities.h"
 #include <string>
 
 Card::Card(const std::string& type) : m_type(type) {}
 
+const int witchStrength = 11;
+const int witchDamage = 10;
+const int witchLoot = 2;
+const int gremlinStrength = 5;
+const int gremlinDamage = 10;
+const int gremlinLoot = 2;
+const int dragonStrength = 25;
+const int dragonDamage = 0;
+const int dragonLoot = 1000;
 
 std::ostream& operator<<(std::ostream& os, const Card& card) {
     printCardDetails(os, card.m_type);
@@ -19,7 +25,7 @@ std::ostream& operator<<(std::ostream& os, const Card& card) {
         printMonsterDetails(os, gremlinStrength, gremlinDamage, gremlinLoot);
     }
     if (card.m_type == "Dragon") {
-        printMonsterDetails(os, dragonStrength, 0, dragonLoot, true);
+        printMonsterDetails(os, dragonStrength, dragonDamage, dragonLoot, true);
     }
     printEndOfCardDetails(os);
     return os;
