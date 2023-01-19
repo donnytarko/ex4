@@ -2,8 +2,6 @@
 #define TREASURE_H
 #include "Card.h"
 
-const int coinsAmount = 10;
-
 class Treasure : public Card {
     public:
     Treasure() : Card("Treasure") {}

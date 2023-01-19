@@ -2,7 +2,6 @@
 #define WELL_H
 #include "Card.h"
 
-const int wellDamage = 10;
 
 class Well : public Card {
     public:
